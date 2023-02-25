@@ -1,0 +1,968 @@
+/*
+
+Xilinx Vivado v2020.1 (64-bit) [Major: 2020, Minor: 1]
+SW Build: 2902540 on Wed May 27 19:54:49 MDT 2020
+IP Build: 2902112 on Wed May 27 22:43:36 MDT 2020
+
+Process ID (PID): 3396
+License: Customer
+
+Current time: 	Thu Aug 25 10:50:50 EDT 2022
+Time zone: 	Eastern Standard Time (America/New_York)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 16
+
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 2
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2020.1/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2020.1/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	Charles Tousignant
+User home directory: C:/Users/Charles Tousignant
+User working directory: C:/StageÉté2022/axi/ip-cores/cores/neuralNet
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2020.1
+RDI_DATADIR: C:/Xilinx/Vivado/2020.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2020.1/bin
+
+Vivado preferences file location: C:/Users/Charles Tousignant/AppData/Roaming/Xilinx/Vivado/2020.1/vivado.xml
+Vivado preferences directory: C:/Users/Charles Tousignant/AppData/Roaming/Xilinx/Vivado/2020.1/
+Vivado layouts directory: C:/Users/Charles Tousignant/AppData/Roaming/Xilinx/Vivado/2020.1/data/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2020.1/lib/classes/planAhead.jar
+Vivado log file location: 	
+Vivado journal file location: 	
+Engine tmp dir: 	C:/StageÉté2022/axi/ip-cores/cores/neuralNet/.Xil/Vivado-3396-DESKTOP-CR7GGNS
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2020.1/ids_lite/ISE
+XILINXD_LICENSE_FILE: 6062@a2.cmc.ca
+XILINX_DSP: C:/Xilinx/Vivado/2020.1/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2020.1
+XILINX_SDK: C:/Xilinx/Vitis/2020.1
+XILINX_VITIS: C:\Xilinx\Vitis\2020.1
+XILINX_VIVADO: C:/Xilinx/Vivado/2020.1
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2020.1
+
+
+GUI allocated memory:	128 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,024 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: START_PROGRESS_DIALOG
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// bz (cs):  Sourcing Tcl script 'scripts/xilinx-build-core.tcl' : addNotify
+// Tcl Message: source scripts/xilinx-build-core.tcl 
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 99 MB (+101296kb) [00:00:09]
+// [Engine Memory]: 1,024 MB (+922475kb) [00:00:09]
+// [GUI Memory]: 117 MB (+14181kb) [00:00:09]
+// WARNING: HEventQueue.dispatchEvent() is taking  1435 ms.
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,024 MB. GUI used memory: 55 MB. Current time: 8/25/22, 10:50:52 AM EDT
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: LOAD_FEATURE
+// Tcl Message: create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 1061.523 ; gain = 0.000 
+// Tcl Message: # set_property design_mode RTL [get_filesets sources_1] # set verilog_sources [findVerilogFiles $source_dir/hdl] # add_files -fileset [get_filesets sources_1] -norecurse $source_dir/hdl/utilsAxiWrapper.vhd # add_files -fileset [get_filesets sources_1] -norecurse $source_dir/hdl/neuralNetWrapper.vhd # add_files -fileset [get_filesets sources_1] -force -norecurse $verilog_sources # set_property top demo_axi_streams [current_fileset] # ipx::package_project -root_dir $source_dir/hdl -vendor user.org -library user -taxonomy /UserIP 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PACKAGER_CURRENT_CORE
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER
+// TclEventType: PACKAGER_OBJECT_ADD
+// Tcl Message: INFO: [IP_Flow 19-2181] Payment Required is not set for this core. INFO: [IP_Flow 19-2187] The Product Guide file is missing. 
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// [GUI Memory]: 134 MB (+10722kb) [00:00:16]
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// [GUI Memory]: 149 MB (+8967kb) [00:00:17]
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// [Engine Memory]: 1,081 MB (+5373kb) [00:00:17]
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// [Engine Memory]: 1,145 MB (+11089kb) [00:00:17]
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// [GUI Memory]: 161 MB (+5373kb) [00:00:17]
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// [Engine Memory]: 1,207 MB (+5075kb) [00:00:18]
+// TclEventType: IPGUI_UPDATE_GUI_ELEMENT
+// TclEventType: PACKAGER_OBJECT_DELETE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// [GUI Memory]: 178 MB (+9038kb) [00:00:18]
+// [Engine Memory]: 1,278 MB (+11046kb) [00:00:18]
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// [GUI Memory]: 193 MB (+6247kb) [00:00:19]
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// [Engine Memory]: 1,399 MB (+59671kb) [00:00:19]
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// Tcl Message: INFO: [IP_Flow 19-4728] Bus Interface 'i_axi_clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 'ctrl'. 
+// Tcl Message: INFO: [IP_Flow 19-4728] Bus Interface 'i_axis_clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 'axis_in'. 
+// Tcl Message: # ipx::add_bus_interface axis_out [ipx::current_core] # set_property abstraction_type_vlnv xilinx.com:interface:axis_rtl:1.0 [ipx::get_bus_interfaces axis_out -of_objects [ipx::current_core]] # set_property bus_type_vlnv xilinx.com:interface:axis:1.0 [ipx::get_bus_interfaces axis_out -of_objects [ipx::current_core]] # set_property interface_mode master [ipx::get_bus_interfaces axis_out -of_objects [ipx::current_core]] # ipx::add_port_map TUSER [ipx::get_bus_interfaces axis_out -of_objects [ipx::current_core]] 
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// [Engine Memory]: 1,473 MB (+3757kb) [00:00:19]
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: STOP_PROGRESS_DIALOG
+// [Engine Memory]: 1,558 MB (+11820kb) [00:00:20]
+// Tcl Message: 0     while executing "update_ip_catalog -rebuild -repo_path /home/cospan/Projects/ip-cores/cores/demo_axi_streams"     (file "scripts/xilinx-build-core.tcl" line 165) 
+dismissDialog("Sourcing Tcl script 'scripts/xilinx-build-core.tcl'"); // bz (cs)
+// TclEventType: STOP_PROGRESS_DIALOG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: LOAD_FEATURE
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// [GUI Memory]: 212 MB (+9844kb) [00:00:23]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 247 MB (+24978kb) [00:00:25]
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, demo_axi_streams (demo_axi_streams.v)]", 2); // B (F, cs)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, demo_axi_streams (demo_axi_streams.v), axis_fifo : fifo (fifo.v)]", 5); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, demo_axi_streams (demo_axi_streams.v), axis_fifo : fifo (fifo.v), net : NeuralNetWrapper(arch) (neuralNetWrapper.vhd)]", 6, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, demo_axi_streams (demo_axi_streams.v), axis_fifo : fifo (fifo.v), net : NeuralNetWrapper(arch) (neuralNetWrapper.vhd)]", 6, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, demo_axi_streams (demo_axi_streams.v), axis_fifo : fifo (fifo.v)]", 5, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, demo_axi_streams (demo_axi_streams.v), axis_fifo : fifo (fifo.v)]", 5, true, false, false, false, false, true); // B (F, cs) - Double Click - Node
+// Elapsed time: 58 seconds
+selectCodeEditor("fifo.v", 179, 387); // bP (w, cs)
+selectCodeEditor("fifo.v", 2, 381); // bP (w, cs)
+// Elapsed time: 25 seconds
+selectCodeEditor("fifo.v", 16, 393); // bP (w, cs)
+// Elapsed time: 46 seconds
+selectCodeEditor("fifo.v", 0, 419, true, false, false, false, false); // bP (w, cs) - Shift Key
+typeControlKey((HResource) null, "fifo.v", 'c'); // bP (w, cs)
+selectCodeEditor("fifo.v", 9, 431); // bP (w, cs)
+selectCodeEditor("fifo.v", 15, 447); // bP (w, cs)
+typeControlKey((HResource) null, "fifo.v", 'v'); // bP (w, cs)
+// Elapsed time: 14 seconds
+selectCodeEditor("fifo.v", 51, 453); // bP (w, cs)
+selectCodeEditor("fifo.v", 39, 448); // bP (w, cs)
+selectCodeEditor("fifo.v", 157, 454); // bP (w, cs)
+selectCodeEditor("fifo.v", 262, 448); // bP (w, cs)
+// Elapsed time: 12 seconds
+selectCodeEditor("fifo.v", 116, 402); // bP (w, cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "neuralNetWrapper.vhd", 2); // m (l, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 80, 95); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 78, 108); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 326, 224); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 76, 98); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 76, 98, false, false, false, false, true); // bP (w, cs) - Double Click
+// Elapsed time: 24 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 307, 227); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 301, 231); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 99, 207); // bP (w, cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "fifo.v", 3); // m (l, cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "neuralNetWrapper.vhd", 2); // m (l, cs)
+// Elapsed time: 10 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 29, 229); // bP (w, cs)
+// Elapsed time: 10 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 217, 229); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 389, 230); // bP (w, cs)
+// Elapsed time: 17 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 44, 281); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 44, 281, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 190, 281); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 190, 281); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 218, 295); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 220, 277); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 262, 281); // bP (w, cs)
+// Elapsed time: 12 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 241, 104); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 80, 133); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 80, 133, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 288, 299); // bP (w, cs)
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'v'); // bP (w, cs)
+// Elapsed time: 72 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 26, 293); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 41, 317); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 30, 316); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 381, 489); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 115, 462); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 123, 147); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 123, 147, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 134, 145); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 318, 158); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 137, 161); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 137, 161, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 283, 164); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 82, 208); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 232, 284); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 114, 227); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 86, 213); // bP (w, cs)
+// Elapsed time: 18 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 177, 432, true, false, false, false, false); // bP (w, cs) - Shift Key
+// Elapsed time: 73 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 69, 211); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 69, 211, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 190, 481); // bP (w, cs)
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'v'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 203, 420); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 301, 390); // bP (w, cs)
+// Elapsed time: 60 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 266, 465); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 245, 470); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 135, 362); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 199, 409); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "fifo.v", 3); // m (l, cs)
+// Elapsed time: 154 seconds
+selectCodeEditor("fifo.v", 40, 281); // bP (w, cs)
+selectCodeEditor("fifo.v", 42, 273); // bP (w, cs)
+selectCodeEditor("fifo.v", 38, 273); // bP (w, cs)
+selectCodeEditor("fifo.v", 42, 267); // bP (w, cs)
+// Elapsed time: 10 seconds
+selectCodeEditor("fifo.v", 103, 251); // bP (w, cs)
+selectCodeEditor("fifo.v", 104, 250, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 174, 248); // bP (w, cs)
+selectCodeEditor("fifo.v", 174, 248, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 188, 73); // bP (w, cs)
+selectCodeEditor("fifo.v", 188, 73, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "fifo.v", 'c'); // bP (w, cs)
+selectCodeEditor("fifo.v", 139, 478); // bP (w, cs)
+selectCodeEditor("fifo.v", 180, 397); // bP (w, cs)
+selectCodeEditor("fifo.v", 181, 397, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "fifo.v", 'v'); // bP (w, cs)
+selectCodeEditor("fifo.v", 48, 232); // bP (w, cs)
+selectCodeEditor("fifo.v", 48, 232, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "fifo.v", 'c'); // bP (w, cs)
+selectCodeEditor("fifo.v", 317, 447); // bP (w, cs)
+selectCodeEditor("fifo.v", 321, 451); // bP (w, cs)
+typeControlKey((HResource) null, "fifo.v", 'v'); // bP (w, cs)
+selectCodeEditor("fifo.v", 76, 391); // bP (w, cs)
+selectCodeEditor("fifo.v", 76, 391, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 78, 377); // bP (w, cs)
+selectCodeEditor("fifo.v", 78, 377, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 282, 363); // bP (w, cs)
+selectCodeEditor("fifo.v", 288, 366); // bP (w, cs)
+// Elapsed time: 21 seconds
+selectCodeEditor("fifo.v", 70, 244); // bP (w, cs)
+selectCodeEditor("fifo.v", 68, 237); // bP (w, cs)
+// Elapsed time: 13 seconds
+selectCodeEditor("fifo.v", 56, 228); // bP (w, cs)
+// Elapsed time: 12 seconds
+selectCodeEditor("fifo.v", 70, 226); // bP (w, cs)
+// Elapsed time: 34 seconds
+selectCodeEditor("fifo.v", 68, 293); // bP (w, cs)
+selectCodeEditor("fifo.v", 71, 271); // bP (w, cs)
+// Elapsed time: 32 seconds
+selectCodeEditor("fifo.v", 58, 244); // bP (w, cs)
+selectCodeEditor("fifo.v", 58, 244, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 70, 322); // bP (w, cs)
+selectCodeEditor("fifo.v", 64, 302); // bP (w, cs)
+selectCodeEditor("fifo.v", 64, 302, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 77, 329); // bP (w, cs)
+selectCodeEditor("fifo.v", 71, 333); // bP (w, cs)
+selectCodeEditor("fifo.v", 180, 331); // bP (w, cs)
+selectCodeEditor("fifo.v", 180, 331, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "fifo.v", 'c'); // bP (w, cs)
+selectCodeEditor("fifo.v", 244, 348); // bP (w, cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "fifo.v", 3); // m (l, cs)
+selectMenuItem((HResource) null, "New Vertical Group"); // JMenuItem (JidePopupMenu)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "neuralNetWrapper.vhd", 2); // m (l, cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "fifo.v", 0); // m (l, cs)
+selectCodeEditor("fifo.v", 170, 264); // bP (w, cs)
+selectCodeEditor("fifo.v", 171, 264); // bP (w, cs)
+selectCodeEditor("fifo.v", 187, 240); // bP (w, cs)
+selectCodeEditor("fifo.v", 187, 240, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "fifo.v", 'c'); // bP (w, cs)
+selectCodeEditor("fifo.v", 204, 418); // bP (w, cs)
+typeControlKey((HResource) null, "fifo.v", 'v'); // bP (w, cs)
+selectCodeEditor("fifo.v", 177, 434); // bP (w, cs)
+selectCodeEditor("fifo.v", 176, 434, false, false, false, false, true); // bP (w, cs) - Double Click
+// Elapsed time: 53 seconds
+selectCodeEditor("fifo.v", 336, 436); // bP (w, cs)
+// Elapsed time: 28 seconds
+selectCodeEditor("fifo.v", 31, 401); // bP (w, cs)
+// Elapsed time: 13 seconds
+selectCodeEditor("fifo.v", 50, 446); // bP (w, cs)
+selectCodeEditor("fifo.v", 74, 453); // bP (w, cs)
+// Elapsed time: 22 seconds
+selectCodeEditor("fifo.v", 267, 148); // bP (w, cs)
+selectCodeEditor("fifo.v", 268, 147, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 253, 116); // bP (w, cs)
+selectCodeEditor("fifo.v", 253, 116, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "fifo.v", 'c'); // bP (w, cs)
+selectCodeEditor("fifo.v", 44, 349); // bP (w, cs)
+typeControlKey((HResource) null, "fifo.v", 'v'); // bP (w, cs)
+// Elapsed time: 17 seconds
+selectCodeEditor("fifo.v", 71, 417); // bP (w, cs)
+selectCodeEditor("fifo.v", 76, 406); // bP (w, cs)
+// Elapsed time: 29 seconds
+selectCodeEditor("fifo.v", 115, 395); // bP (w, cs)
+selectCodeEditor("fifo.v", 192, 400); // bP (w, cs)
+selectCodeEditor("fifo.v", 198, 400); // bP (w, cs)
+selectCodeEditor("fifo.v", 87, 446); // bP (w, cs)
+selectCodeEditor("fifo.v", 116, 391); // bP (w, cs)
+selectCodeEditor("fifo.v", 112, 378); // bP (w, cs)
+selectCodeEditor("fifo.v", 297, 366); // bP (w, cs)
+selectCodeEditor("fifo.v", 29, 467); // bP (w, cs)
+typeControlKey((HResource) null, "fifo.v", 'v'); // bP (w, cs)
+// Elapsed time: 21 seconds
+selectCodeEditor("fifo.v", 208, 437); // bP (w, cs)
+// Elapsed time: 23 seconds
+selectCodeEditor("fifo.v", 232, 437); // bP (w, cs)
+selectCodeEditor("fifo.v", 232, 437, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 247, 435); // bP (w, cs)
+selectCodeEditor("fifo.v", 247, 435, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 280, 433); // bP (w, cs)
+selectCodeEditor("fifo.v", 227, 429); // bP (w, cs)
+selectCodeEditor("fifo.v", 67, 477); // bP (w, cs)
+selectCodeEditor("fifo.v", 66, 467); // bP (w, cs)
+selectCodeEditor("fifo.v", 26, 468); // bP (w, cs)
+typeControlKey((HResource) null, "fifo.v", 'c'); // bP (w, cs)
+selectCodeEditor("fifo.v", 40, 478); // bP (w, cs)
+selectCodeEditor("fifo.v", 40, 467); // bP (w, cs)
+selectCodeEditor("fifo.v", 81, 381); // bP (w, cs)
+selectCodeEditor("fifo.v", 71, 378); // bP (w, cs)
+selectCodeEditor("fifo.v", 69, 377); // bP (w, cs)
+selectCodeEditor("fifo.v", 72, 382); // bP (w, cs)
+selectCodeEditor("fifo.v", 51, 355); // bP (w, cs)
+typeControlKey((HResource) null, "fifo.v", 'v'); // bP (w, cs)
+selectCodeEditor("fifo.v", 37, 376); // bP (w, cs)
+typeControlKey((HResource) null, "fifo.v", 'c'); // bP (w, cs)
+selectCodeEditor("fifo.v", 59, 394); // bP (w, cs)
+typeControlKey((HResource) null, "fifo.v", 'v'); // bP (w, cs)
+selectCodeEditor("fifo.v", 29, 415); // bP (w, cs)
+selectCodeEditor("fifo.v", 29, 415, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 291, 416); // bP (w, cs)
+// Elapsed time: 12 seconds
+selectCodeEditor("fifo.v", 306, 149); // bP (w, cs)
+selectCodeEditor("fifo.v", 306, 149, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "fifo.v", 'c'); // bP (w, cs)
+selectCodeEditor("fifo.v", 370, 345); // bP (w, cs)
+selectCodeEditor("fifo.v", 98, 362); // bP (w, cs)
+selectCodeEditor("fifo.v", 99, 368); // bP (w, cs)
+selectCodeEditor("fifo.v", 99, 368, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "fifo.v", 'v'); // bP (w, cs)
+selectCodeEditor("fifo.v", 267, 364); // bP (w, cs)
+selectCodeEditor("fifo.v", 281, 142); // bP (w, cs)
+selectCodeEditor("fifo.v", 281, 142, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "fifo.v", 'c'); // bP (w, cs)
+selectCodeEditor("fifo.v", 254, 467); // bP (w, cs)
+selectCodeEditor("fifo.v", 254, 467, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "fifo.v", 'v'); // bP (w, cs)
+selectCodeEditor("fifo.v", 234, 43); // bP (w, cs)
+selectCodeEditor("fifo.v", 234, 43, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "fifo.v", 'c'); // bP (w, cs)
+selectCodeEditor("fifo.v", 169, 367); // bP (w, cs)
+selectCodeEditor("fifo.v", 169, 367, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "fifo.v", 'v'); // bP (w, cs)
+selectCodeEditor("fifo.v", 231, 371); // bP (w, cs)
+selectCodeEditor("fifo.v", 237, 369); // bP (w, cs)
+selectCodeEditor("fifo.v", 413, 362); // bP (w, cs)
+selectCodeEditor("fifo.v", 418, 364); // bP (w, cs)
+// Elapsed time: 18 seconds
+selectCodeEditor("fifo.v", 285, 264); // bP (w, cs)
+selectCodeEditor("fifo.v", 285, 264, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 143, 467); // bP (w, cs)
+selectCodeEditor("fifo.v", 143, 467, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 184, 335); // bP (w, cs)
+selectCodeEditor("fifo.v", 187, 349); // bP (w, cs)
+selectCodeEditor("fifo.v", 265, 346); // bP (w, cs)
+selectCodeEditor("fifo.v", 265, 346, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 99, 194); // bP (w, cs)
+selectCodeEditor("fifo.v", 99, 194, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 322, 196); // bP (w, cs)
+selectCodeEditor("fifo.v", 323, 196, false, false, false, false, true); // bP (w, cs) - Double Click
+// Elapsed time: 11 seconds
+selectCodeEditor("fifo.v", 74, 288); // bP (w, cs)
+selectCodeEditor("fifo.v", 70, 296); // bP (w, cs)
+// Elapsed time: 23 seconds
+selectCodeEditor("fifo.v", 97, 310); // bP (w, cs)
+selectCodeEditor("fifo.v", 97, 310, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "fifo.v", 'c'); // bP (w, cs)
+selectCodeEditor("fifo.v", 97, 329); // bP (w, cs)
+selectCodeEditor("fifo.v", 103, 331); // bP (w, cs)
+selectCodeEditor("fifo.v", 103, 331, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 101, 357); // bP (w, cs)
+selectCodeEditor("fifo.v", 99, 350); // bP (w, cs)
+selectCodeEditor("fifo.v", 86, 309); // bP (w, cs)
+selectCodeEditor("fifo.v", 87, 287); // bP (w, cs)
+selectCodeEditor("fifo.v", 304, 270); // bP (w, cs)
+typeControlKey((HResource) null, "fifo.v", 'v'); // bP (w, cs)
+selectCodeEditor("fifo.v", 57, 281); // bP (w, cs)
+selectCodeEditor("fifo.v", 57, 281, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "fifo.v", 'c'); // bP (w, cs)
+selectCodeEditor("fifo.v", 340, 394); // bP (w, cs)
+selectCodeEditor("fifo.v", 300, 416); // bP (w, cs)
+selectCodeEditor("fifo.v", 70, 398); // bP (w, cs)
+selectCodeEditor("fifo.v", 70, 398, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 479, 380); // bP (w, cs)
+typeControlKey((HResource) null, "fifo.v", 'v'); // bP (w, cs)
+typeControlKey((HResource) null, "fifo.v", 'v'); // bP (w, cs)
+typeControlKey((HResource) null, "fifo.v", 'v'); // bP (w, cs)
+// Elapsed time: 10 seconds
+selectCodeEditor("fifo.v", 37, 377); // bP (w, cs)
+selectCodeEditor("fifo.v", 326, 399); // bP (w, cs)
+selectCodeEditor("fifo.v", 298, 416); // bP (w, cs)
+selectCodeEditor("fifo.v", 142, 307); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("neuralNetWrapper.vhd", 195, 335); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 207, 345); // bP (w, cs)
+// Elapsed time: 10 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Package IP - demo_axi_streams", 1); // m (l, cs)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Review and Package", 7); // ar (J, cs)
+unMinimizeFrame(PAResourceOtoP.PAViews_SOURCES, "Sources"); // aA
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog]", 1); // B (F, cs)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog]", 1); // B (F, cs)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, demo_axi_streams (demo_axi_streams.v), axis_fifo : fifo (fifo.v)]", 5); // B (F, cs)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, demo_axi_streams (demo_axi_streams.v), axis_fifo : fifo (fifo.v)]", 5); // B (F, cs)
+selectCodeEditor("fifo.v", 238, 181); // bP (w, cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Package IP - demo_axi_streams", 1); // m (l, cs)
+selectButton(PAResourceQtoS.ReviewContentPanel_PACKAGE_IP, "Package IP"); // a (c, cs)
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: set_property core_revision 4 [ipx::current_core] 
+// Tcl Message: ipx::create_xgui_files [ipx::current_core] 
+// Tcl Message: ipx::update_checksums [ipx::current_core] 
+// Tcl Message: ipx::save_core [ipx::current_core] 
+// TclEventType: PROJECT_CHANGE
+// Tcl Message: set_property  ip_repo_paths  c:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl [current_project] 
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// Tcl Message: update_ip_catalog 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl'. 
+selectButton("OptionPane.button", "OK"); // JButton (v, B)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,624 MB. GUI used memory: 173 MB. Current time: 8/25/22, 11:20:57 AM EDT
+// Elapsed time: 808 seconds
+selectButton(PAResourceCommand.PACommandNames_TOGGLE_VIEW_NAV, (String) null); // E (H, cs)
+// Run Command: PAResourceCommand.PACommandNames_TOGGLE_VIEW_NAV
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "neuralNetWrapper.vhd", 0); // m (l, cs)
+selectMenuItem((HResource) null, "Move to this Tab Group"); // JMenuItem (JidePopupMenu)
+// Elapsed time: 29 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 212, 365); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 212, 365, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 375, 416); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 375, 416, false, false, false, false, true); // bP (w, cs) - Double Click
+// Elapsed time: 22 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 317, 347); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 317, 347, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 372, 349); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 293, 350); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 293, 350, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 81, 178); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 81, 178); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 81, 178); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 81, 178, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 298, 355); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 298, 355, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'v'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 309, 366); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 90, 144); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 90, 144, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 258, 302); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 258, 302, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'v'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 353, 351); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 353, 351, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'v'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 448, 449); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 448, 449, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'v'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 316, 425); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 368, 409); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 309, 327); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Package IP - demo_axi_streams", 1); // m (l, cs)
+selectButton(PAResourceQtoS.ReviewContentPanel_RE_PACKAGE_IP, "Re-Package IP"); // a (c, cs)
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: set_property core_revision 5 [ipx::current_core] 
+// Tcl Message: ipx::create_xgui_files [ipx::current_core] 
+// Tcl Message: ipx::update_checksums [ipx::current_core] 
+// Tcl Message: ipx::save_core [ipx::current_core] 
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// Tcl Message: update_ip_catalog -rebuild -repo_path c:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl 
+// Tcl Message: INFO: [IP_Flow 19-725] Reloaded user IP repository 'c:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl' 
+selectButton("OptionPane.button", "OK"); // JButton (v, B)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 109 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "fifo.v", 2); // m (l, cs)
+// Elapsed time: 26 seconds
+selectCodeEditor("fifo.v", 161, 399); // bP (w, cs)
+selectCodeEditor("fifo.v", 170, 397); // bP (w, cs)
+selectCodeEditor("fifo.v", 171, 397, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 254, 398); // bP (w, cs)
+selectCodeEditor("fifo.v", 253, 399, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 246, 399); // bP (w, cs)
+selectCodeEditor("fifo.v", 246, 399, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 72, 229); // bP (w, cs)
+selectCodeEditor("fifo.v", 72, 229, false, false, false, false, true); // bP (w, cs) - Double Click
+// Elapsed time: 19 seconds
+selectCodeEditor("fifo.v", 91, 306); // bP (w, cs)
+selectCodeEditor("fifo.v", 78, 333); // bP (w, cs)
+selectCodeEditor("fifo.v", 176, 329); // bP (w, cs)
+selectCodeEditor("fifo.v", 176, 329, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 80, 279); // bP (w, cs)
+selectCodeEditor("fifo.v", 200, 282); // bP (w, cs)
+selectCodeEditor("fifo.v", 200, 282, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 72, 175); // bP (w, cs)
+selectCodeEditor("fifo.v", 72, 175, false, false, false, false, true); // bP (w, cs) - Double Click
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 16 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Package IP - demo_axi_streams", 1); // m (l, cs)
+selectButton(PAResourceQtoS.ReviewContentPanel_RE_PACKAGE_IP, "Re-Package IP"); // a (c, cs)
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: set_property core_revision 6 [ipx::current_core] 
+// Tcl Message: ipx::create_xgui_files [ipx::current_core] 
+// Tcl Message: ipx::update_checksums [ipx::current_core] 
+// Tcl Message: ipx::save_core [ipx::current_core] 
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// Tcl Message: update_ip_catalog -rebuild -repo_path c:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl 
+// Tcl Message: INFO: [IP_Flow 19-725] Reloaded user IP repository 'c:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl' 
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+selectButton("OptionPane.button", "OK"); // JButton (v, B)
+// Elapsed time: 125 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "fifo.v", 2); // m (l, cs)
+selectCodeEditor("fifo.v", 469, 448); // bP (w, cs)
+// Elapsed time: 13 seconds
+selectCodeEditor("fifo.v", 150, 435); // bP (w, cs)
+selectCodeEditor("fifo.v", 150, 435, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 418, 456); // bP (w, cs)
+selectCodeEditor("fifo.v", 445, 448); // bP (w, cs)
+selectCodeEditor("fifo.v", 440, 450); // bP (w, cs)
+// Elapsed time: 52 seconds
+selectCodeEditor("fifo.v", 349, 457); // bP (w, cs)
+selectCodeEditor("fifo.v", 349, 457, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 146, 379); // bP (w, cs)
+selectCodeEditor("fifo.v", 146, 379, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 315, 378); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Package IP - demo_axi_streams", 1); // m (l, cs)
+selectButton(PAResourceQtoS.ReviewContentPanel_RE_PACKAGE_IP, "Re-Package IP"); // a (c, cs)
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: set_property core_revision 7 [ipx::current_core] 
+// Tcl Message: ipx::create_xgui_files [ipx::current_core] 
+// Tcl Message: ipx::update_checksums [ipx::current_core] 
+// Tcl Message: ipx::save_core [ipx::current_core] 
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// Tcl Message: update_ip_catalog -rebuild -repo_path c:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl 
+// Tcl Message: INFO: [IP_Flow 19-725] Reloaded user IP repository 'c:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl' 
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+selectButton("OptionPane.button", "OK"); // JButton (v, B)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,624 MB. GUI used memory: 171 MB. Current time: 8/25/22, 11:50:57 AM EDT
+// Elapsed time: 1135 seconds
+unMinimizeFrame(PAResourceOtoP.PAViews_SOURCES, "Sources"); // aA
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // E (g, cs)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cs): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a (E, c)
+// Elapsed time: 100 seconds
+String[] filenames31467 = {"C:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl/BinaryToStochastic.vhd", "C:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl/BinaryToStochasticNoSeed.vhd", "C:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl/BipolarStochasticMultiplier.vhd", "C:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl/ISTanh.vhd", "C:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl/InputLayer.vhd", "C:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl/LFSR11.vhd", "C:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl/NeuralNetworkTop.vhd", "C:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl/NeuronLayer.vhd", "C:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl/SigmoidNeuron.vhd", "C:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl/StochasticAdder.vhd", "C:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl/StochasticNeuralNetwork.vhd", "C:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl/StochasticToBinary.vhd", "C:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl/incrementer.vhd", "C:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl/parameters.vhd", "C:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl/utils.vhd", "C:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl/utilsAxiWrapper.vhd", "C:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl/utilsTreeAdder.vhd"};
+setFileChooser(filenames31467);
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 107 seconds
+dismissDialog("Add Sources"); // c (cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Libraries", 1); // i (N, cs)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0); // B (F, cs)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL]", 2); // B (F, cs)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib]", 3); // B (F, cs)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, Unreferenced]", 5); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, Unreferenced, utilsAxiWrapper.vhd]", 6, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, Unreferenced, utils.vhd]", 7, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, Unreferenced, utilsAxiWrapper.vhd]", 6, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, Unreferenced, utilsAxiWrapper.vhd]", 6, false, false, false, false, true, false); // B (F, cs) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_PROPERTIES, "Source File Properties..."); // ai (ao, cs)
+// Run Command: RDIResourceCommand.RDICommands_PROPERTIES
+selectButton(PAResourceQtoS.SrcFilePropPanels_TYPE, (String) null); // t (ci, cs)
+// ab (cs): Set Type: addNotify
+selectComboBox(PAResourceQtoS.SrcFileTypeComboBox_SOURCE_FILE_TYPE, "VHDL 2008", 4); // cj (Q, ab)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ab)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: set_property file_type {VHDL 2008} [get_files  C:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl/utilsAxiWrapper.vhd] 
+dismissDialog("Set Type"); // ab (cs)
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aL (aI, cs)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 3, 115); // dT (ae, cs)
+typeControlKey(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, "RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR", 'c'); // dT (ae, cs)
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'bd::match_path {set_property} {C:/StageÉté2022/axi/ip-cores/cores/neuralNet/hdl/} {utilsAxiWrapper.vhd]}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "set_property file_type {VHDL 2008} [get_files  *.vhd]", true); // aF (ac, cs)
+// Tcl Command: 'set_property file_type {VHDL 2008} [get_files  *.vhd]'
+// Tcl Command: 'set_property file_type {VHDL 2008} [get_files  *.vhd]'
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: set_property file_type {VHDL 2008} [get_files  *.vhd] 
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Hierarchy", 0); // i (N, cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "neuralNetWrapper.vhd", 3); // m (l, cs)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Libraries", 1); // i (N, cs)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL 2008]", 2); // B (F, cs)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL 2008, xil_defaultlib]", 3); // B (F, cs)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL 2008, xil_defaultlib, Unreferenced]", 5); // B (F, cs)
+// Elapsed time: 67 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL 2008, xil_defaultlib, Unreferenced, NeuralNetworkTop.vhd]", 16, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL 2008, xil_defaultlib, Unreferenced, NeuralNetworkTop.vhd]", 16, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "NeuralNetworkTop.vhd", 4); // m (l, cs)
+selectMenuItem((HResource) null, "New Vertical Group"); // JMenuItem (JidePopupMenu)
+// Elapsed time: 17 seconds
+selectCodeEditor("NeuralNetworkTop.vhd", 28, 246); // bP (w, cs)
+selectCodeEditor("NeuralNetworkTop.vhd", 64, 378, true, false, false, false, false); // bP (w, cs) - Shift Key
+typeControlKey((HResource) null, "NeuralNetworkTop.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 87, 103); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 91, 96); // bP (w, cs)
+// Elapsed time: 20 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 126, 344); // bP (w, cs)
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'v'); // bP (w, cs)
+// Elapsed time: 88 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 78, 215); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 164, 214); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 164, 214, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 41, 214); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 146, 214); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 146, 214, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 99, 219); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 100, 218, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 27, 194); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 22, 211); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 449, 218); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 295, 176); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 105, 227); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 105, 227, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 131, 387); // bP (w, cs)
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'v'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 178, 365); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 118, 368); // bP (w, cs)
+// Elapsed time: 24 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 159, 305); // bP (w, cs)
+selectCodeEditor("NeuralNetworkTop.vhd", 121, 449); // bP (w, cs)
+typeControlKey((HResource) null, "NeuralNetworkTop.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 90, 266); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 79, 278); // bP (w, cs)
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'v'); // bP (w, cs)
+typeControlKey(null, null, 'z');
+selectCodeEditor("neuralNetWrapper.vhd", 49, 291); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 34, 283); // bP (w, cs)
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'v'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 52, 281); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 63, 364); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 102, 359); // bP (w, cs)
+selectButton(RDIResource.CodeView_TOGGLE_COLUMN_SELECTION_MODE, (String) null); // x (g, cs): FALSE
+selectCodeEditor("NeuralNetworkTop.vhd", 102, 417); // bP (w, cs)
+selectCodeEditor("NeuralNetworkTop.vhd", 265, 154); // bP (w, cs)
+typeControlKey((HResource) null, "NeuralNetworkTop.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 83, 255); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 89, 248); // bP (w, cs)
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'v'); // bP (w, cs)
+selectCodeEditor("NeuralNetworkTop.vhd", 133, 142); // bP (w, cs)
+selectCodeEditor("NeuralNetworkTop.vhd", 133, 142, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("NeuralNetworkTop.vhd", 318, 140); // bP (w, cs)
+typeControlKey((HResource) null, "NeuralNetworkTop.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 332, 245); // bP (w, cs)
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'v'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 167, 453); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 167, 453, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 87, 386); // bP (w, cs)
+// Elapsed time: 12 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 124, 163); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 184, 172); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 184, 172, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 207, 175); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 207, 175, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 191, 483); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 191, 483, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 213, 174); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 213, 174, false, false, false, false, true); // bP (w, cs) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL 2008, xil_defaultlib, Unreferenced, parameters.vhd]", 20, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL 2008, xil_defaultlib, Unreferenced, parameters.vhd]", 20, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("parameters.vhd", 246, 349); // bP (w, cs)
+selectCodeEditor("parameters.vhd", 246, 349, false, false, false, false, true); // bP (w, cs) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL 2008, xil_defaultlib, Unreferenced, utils.vhd]", 7, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL 2008, xil_defaultlib, Unreferenced, utils.vhd]", 7, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("utils.vhd", 136, 433); // bP (w, cs)
+selectCodeEditor("utils.vhd", 136, 433, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("utils.vhd", 126, 401); // bP (w, cs)
+selectCodeEditor("utils.vhd", 126, 401, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "utils.vhd", 'c'); // bP (w, cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "neuralNetWrapper.vhd", 3); // m (l, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 242, 252); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 213, 182); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 214, 182, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'v'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 104, 119); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 109, 108); // bP (w, cs)
+// Elapsed time: 12 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 184, 316); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 117, 331); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 206, 331); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 206, 331, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 313, 246); // bP (w, cs)
+// Elapsed time: 13 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 99, 175); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 99, 176, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 158, 482); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 155, 482); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 224, 164); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 240, 184); // bP (w, cs)
+// Elapsed time: 14 seconds
+selectCodeEditor("NeuralNetworkTop.vhd", 190, 300); // bP (w, cs)
+selectCodeEditor("NeuralNetworkTop.vhd", 190, 300, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("NeuralNetworkTop.vhd", 168, 315); // bP (w, cs)
+selectCodeEditor("NeuralNetworkTop.vhd", 168, 315, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("NeuralNetworkTop.vhd", 136, 95); // bP (w, cs)
+selectCodeEditor("NeuralNetworkTop.vhd", 136, 95, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("NeuralNetworkTop.vhd", 158, 83); // bP (w, cs)
+selectCodeEditor("NeuralNetworkTop.vhd", 158, 83, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("NeuralNetworkTop.vhd", 158, 92); // bP (w, cs)
+selectCodeEditor("NeuralNetworkTop.vhd", 158, 92, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "NeuralNetworkTop.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 143, 202); // bP (w, cs)
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'v'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 246, 108); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 74, 76); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 74, 76, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 145, 87); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 92, 88); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 92, 88, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 244, 417); // bP (w, cs)
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'v'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 235, 401); // bP (w, cs)
+// Elapsed time: 14 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 284, 399); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 284, 399, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 144, 127); // bP (w, cs)
+// Elapsed time: 13 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 293, 364); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 293, 364, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("NeuralNetworkTop.vhd", 320, 354); // bP (w, cs)
+selectCodeEditor("NeuralNetworkTop.vhd", 320, 354, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "NeuralNetworkTop.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 314, 364); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 314, 364, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'v'); // bP (w, cs)
+// Elapsed time: 11 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 393, 368); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 286, 400); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 269, 384); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 187, 368); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 187, 368, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("NeuralNetworkTop.vhd", 209, 125); // bP (w, cs)
+typeControlKey((HResource) null, "NeuralNetworkTop.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 114, 138); // bP (w, cs)
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'v'); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL 2008, xil_defaultlib, Unreferenced, utilsAxiWrapper.vhd]", 6, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL 2008, xil_defaultlib, Unreferenced, utilsAxiWrapper.vhd]", 6, false, false, false, false, false, true); // B (F, cs) - Double Click
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL 2008, xil_defaultlib, Unreferenced, utilsAxiWrapper.vhd]", 20, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL 2008, xil_defaultlib, Unreferenced, utilsAxiWrapper.vhd]", 20, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL 2008, xil_defaultlib, utilsTreeAdder.vhd]", 9, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL 2008, xil_defaultlib, utilsTreeAdder.vhd]", 9, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("utilsTreeAdder.vhd", 121, 332); // bP (w, cs)
+selectCodeEditor("utilsTreeAdder.vhd", 347, 319); // bP (w, cs)
+selectCodeEditor("utilsTreeAdder.vhd", 104, 338); // bP (w, cs)
+selectCodeEditor("utilsTreeAdder.vhd", 104, 338, false, false, false, false, true); // bP (w, cs) - Double Click
+// Elapsed time: 10 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "utilsAxiWrapper.vhd", 6); // m (l, cs)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "neuralNetWrapper.vhd", 3); // m (l, cs)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F
+// Elapsed time: 17 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 40, 190); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 138, 313); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 150, 309); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 150, 309, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 156, 416); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 157, 416, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 203, 362); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 203, 362, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 153, 359); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 166, 363); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 229, 381); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 229, 381, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 297, 95); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 297, 95, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 248, 383); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 248, 384, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 248, 385); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 248, 385, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'v'); // bP (w, cs)
+// Elapsed time: 18 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 124, 196); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 123, 196, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 167, 360); // bP (w, cs)
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'v'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 274, 362); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 346, 371); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 346, 371, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 391, 362); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 391, 362, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 249, 379); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 227, 369); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 227, 369, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("neuralNetWrapper.vhd", 266, 146); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 267, 146, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 145, 419); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 145, 419, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'v'); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,624 MB. GUI used memory: 178 MB. Current time: 8/25/22, 12:20:57 PM EDT
+// Elapsed time: 628 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL 2008, xil_defaultlib, BinaryToStochastic.vhd]", 6, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL 2008, xil_defaultlib, BinaryToStochastic.vhd]", 6, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL 2008, xil_defaultlib, BinaryToStochastic.vhd]", 6, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("BinaryToStochastic.vhd", 330, 459); // bP (w, cs)
+// Elapsed time: 123 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL 2008, xil_defaultlib, LFSR11.vhd]", 5, false); // B (F, cs)
+// Elapsed time: 976 seconds
+selectCodeEditor("BinaryToStochastic.vhd", 217, 214); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,624 MB. GUI used memory: 176 MB. Current time: 8/25/22, 12:50:58 PM EDT

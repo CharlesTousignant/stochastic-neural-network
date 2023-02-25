@@ -1,0 +1,358 @@
+/*
+
+Xilinx Vivado v2020.1 (64-bit) [Major: 2020, Minor: 1]
+SW Build: 2902540 on Wed May 27 19:54:49 MDT 2020
+IP Build: 2902112 on Wed May 27 22:43:36 MDT 2020
+
+Process ID (PID): 11044
+License: Customer
+
+Current time: 	Thu Aug 25 13:28:21 EDT 2022
+Time zone: 	Eastern Standard Time (America/New_York)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 16
+
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 2
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2020.1/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2020.1/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	Charles Tousignant
+User home directory: C:/Users/Charles Tousignant
+User working directory: C:/StageÉté2022/CharlesTousignant_MLP/Pynq/axiNeuralNet
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2020.1
+RDI_DATADIR: C:/Xilinx/Vivado/2020.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2020.1/bin
+
+Vivado preferences file location: C:/Users/Charles Tousignant/AppData/Roaming/Xilinx/Vivado/2020.1/vivado.xml
+Vivado preferences directory: C:/Users/Charles Tousignant/AppData/Roaming/Xilinx/Vivado/2020.1/
+Vivado layouts directory: C:/Users/Charles Tousignant/AppData/Roaming/Xilinx/Vivado/2020.1/data/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2020.1/lib/classes/planAhead.jar
+Vivado log file location: 	
+Vivado journal file location: 	
+Engine tmp dir: 	C:/StageÉté2022/CharlesTousignant_MLP/Pynq/axiNeuralNet/.Xil/Vivado-11044-DESKTOP-CR7GGNS
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2020.1/ids_lite/ISE
+XILINXD_LICENSE_FILE: 6062@a2.cmc.ca
+XILINX_DSP: C:/Xilinx/Vivado/2020.1/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2020.1
+XILINX_SDK: C:/Xilinx/Vitis/2020.1
+XILINX_VITIS: C:\Xilinx\Vitis\2020.1
+XILINX_VIVADO: C:/Xilinx/Vivado/2020.1
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2020.1
+
+
+GUI allocated memory:	198 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,061 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// TclEventType: START_PROGRESS_DIALOG
+// Tcl Message: start_gui 
+// TclEventType: START_PROGRESS_DIALOG
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// bz (cs):  Sourcing Tcl script 'scripts/xilinx-build-core.tcl' : addNotify
+// Tcl Message: source scripts/xilinx-build-core.tcl 
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 95 MB (+97457kb) [00:00:05]
+// [Engine Memory]: 1,061 MB (+960686kb) [00:00:05]
+// [GUI Memory]: 113 MB (+13851kb) [00:00:06]
+// WARNING: HEventQueue.dispatchEvent() is taking  1333 ms.
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,061 MB. GUI used memory: 55 MB. Current time: 8/25/22, 1:28:22 PM EDT
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: LOAD_FEATURE
+// Tcl Message: # set_property design_mode RTL [get_filesets sources_1] # set verilog_sources [findVerilogFiles $source_dir/hdl] # add_files -fileset [get_filesets sources_1] -norecurse $source_dir/hdl/utilsAxiWrapper.vhd # add_files -fileset [get_filesets sources_1] -norecurse $source_dir/hdl/neuralNetWrapper.vhd # add_files -fileset [get_filesets sources_1] -force -norecurse $verilog_sources # set_property top neural_network_top [current_fileset] # ipx::package_project -root_dir $source_dir/hdl -vendor user.org -library user -taxonomy /UserIP 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PACKAGER_CURRENT_CORE
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER
+// TclEventType: PACKAGER_OBJECT_ADD
+// Tcl Message: INFO: [IP_Flow 19-2181] Payment Required is not set for this core. INFO: [IP_Flow 19-2187] The Product Guide file is missing. 
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// [GUI Memory]: 132 MB (+13589kb) [00:00:12]
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// [GUI Memory]: 141 MB (+2178kb) [00:00:13]
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// [Engine Memory]: 1,157 MB (+45119kb) [00:00:13]
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// [Engine Memory]: 1,230 MB (+16250kb) [00:00:14]
+// TclEventType: IPGUI_UPDATE_GUI_ELEMENT
+// TclEventType: PACKAGER_OBJECT_DELETE
+// TclEventType: PACKAGER_OBJECT_ADD
+// [GUI Memory]: 158 MB (+10974kb) [00:00:14]
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// [GUI Memory]: 174 MB (+8619kb) [00:00:14]
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// [Engine Memory]: 1,344 MB (+55207kb) [00:00:15]
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// [GUI Memory]: 188 MB (+5302kb) [00:00:15]
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// [Engine Memory]: 1,419 MB (+7487kb) [00:00:15]
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// Tcl Message: INFO: [IP_Flow 19-4728] Bus Interface 'i_axi_clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 'ctrl'. 
+// Tcl Message: INFO: [IP_Flow 19-4728] Bus Interface 'i_axis_clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 'axis_in'. 
+// TclEventType: PACKAGER_OBJECT_ADD
+// [GUI Memory]: 202 MB (+4584kb) [00:00:16]
+// [Engine Memory]: 1,492 MB (+2199kb) [00:00:16]
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: STOP_PROGRESS_DIALOG
+// Tcl Message: 0     while executing "update_ip_catalog -rebuild -repo_path /home/cospan/Projects/ip-cores/cores/demo_axi_streams"     (file "scripts/xilinx-build-core.tcl" line 165) 
+// [GUI Memory]: 219 MB (+6991kb) [00:00:17]
+dismissDialog("Sourcing Tcl script 'scripts/xilinx-build-core.tcl'"); // bz (cs)
+// TclEventType: STOP_PROGRESS_DIALOG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: LOAD_FEATURE
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// [Engine Memory]: 1,568 MB (+2026kb) [00:00:20]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 244 MB (+14654kb) [00:00:24]
+// Elapsed time: 28 seconds
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Review and Package", 7); // ar (J, cs)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, neural_network_top (NeuralNetworkTop.v)]", 2); // B (F, cs)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, neural_network_top (NeuralNetworkTop.v), axis_fifo : fifo (fifo.v)]", 5); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, neural_network_top (NeuralNetworkTop.v), axis_fifo : fifo (fifo.v), net : NeuralNetWrapper(arch) (neuralNetWrapper.vhd)]", 6, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, neural_network_top (NeuralNetworkTop.v), axis_fifo : fifo (fifo.v), net : NeuralNetWrapper(arch) (neuralNetWrapper.vhd)]", 6, true, false, false, false, false, true); // B (F, cs) - Double Click - Node
+selectCodeEditor("neuralNetWrapper.vhd", 337, 227); // bP (w, cs)
+// Elapsed time: 16 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 330, 381); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 217, 435); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 430, 229); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 2, 128); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 33, 147); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 25, 146); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 142, 191); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 143, 182); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 283, 313); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 284, 298); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 279, 286); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Package IP - neural_network_top", 1); // m (l, cs)
+selectButton(PAResourceQtoS.ReviewContentPanel_PACKAGE_IP, "Package IP"); // a (c, cs)
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: set_property core_revision 4 [ipx::current_core] 
+// Tcl Message: ipx::create_xgui_files [ipx::current_core] 
+// Tcl Message: ipx::update_checksums [ipx::current_core] 
+// Tcl Message: ipx::save_core [ipx::current_core] 
+// TclEventType: PROJECT_CHANGE
+// Tcl Message: set_property  ip_repo_paths  c:/StageÉté2022/CharlesTousignant_MLP/Pynq/axiNeuralNet/hdl [current_project] 
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// Tcl Message: update_ip_catalog 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/StageÉté2022/CharlesTousignant_MLP/Pynq/axiNeuralNet/hdl'. 
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+selectButton("OptionPane.button", "OK"); // JButton (v, B)
+// Elapsed time: 245 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "neuralNetWrapper.vhd", 2); // m (l, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 216, 145); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 108, 95); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 90, 165); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 90, 165, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'c'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 234, 301); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 234, 301, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "neuralNetWrapper.vhd", 'v'); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 267, 284); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Package IP - neural_network_top", 1); // m (l, cs)
+selectButton(PAResourceQtoS.ReviewContentPanel_RE_PACKAGE_IP, "Re-Package IP"); // a (c, cs)
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: set_property core_revision 5 [ipx::current_core] 
+// Tcl Message: ipx::create_xgui_files [ipx::current_core] 
+// Tcl Message: ipx::update_checksums [ipx::current_core] 
+// Tcl Message: ipx::save_core [ipx::current_core] 
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// Tcl Message: update_ip_catalog -rebuild -repo_path c:/StageÉté2022/CharlesTousignant_MLP/Pynq/axiNeuralNet/hdl 
+// Tcl Message: INFO: [IP_Flow 19-725] Reloaded user IP repository 'c:/StageÉté2022/CharlesTousignant_MLP/Pynq/axiNeuralNet/hdl' 
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+selectButton("OptionPane.button", "OK"); // JButton (v, B)
+// Elapsed time: 528 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "neuralNetWrapper.vhd", 2); // m (l, cs)
+// Elapsed time: 136 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 320, 427); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 322, 419); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 310, 438); // bP (w, cs)
+// Elapsed time: 664 seconds
+selectCodeEditor("neuralNetWrapper.vhd", 102, 181); // bP (w, cs)
+selectCodeEditor("neuralNetWrapper.vhd", 102, 181, false, false, false, false, true); // bP (w, cs) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Package IP - neural_network_top", 1); // m (l, cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "neuralNetWrapper.vhd", 2); // m (l, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, neural_network_top (NeuralNetworkTop.v), axis_fifo : fifo (fifo.v)]", 5, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, neural_network_top (NeuralNetworkTop.v), axis_fifo : fifo (fifo.v)]", 5, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, neural_network_top (NeuralNetworkTop.v), axis_fifo : fifo (fifo.v)]", 5, true, false, false, false, false, true); // B (F, cs) - Double Click - Node
+selectCodeEditor("fifo.v", 227, 470); // bP (w, cs)
+selectCodeEditor("fifo.v", 227, 470, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 226, 384); // bP (w, cs)
+selectCodeEditor("fifo.v", 226, 384, false, false, false, false, true); // bP (w, cs) - Double Click
+// Elapsed time: 24 seconds
+selectCodeEditor("fifo.v", 343, 432); // bP (w, cs)
+selectCodeEditor("fifo.v", 263, 431); // bP (w, cs)
+selectCodeEditor("fifo.v", 257, 435); // bP (w, cs)
+selectCodeEditor("fifo.v", 105, 435); // bP (w, cs)
+selectCodeEditor("fifo.v", 105, 435, false, false, false, false, true); // bP (w, cs) - Double Click
+// Elapsed time: 13 seconds
+selectCodeEditor("fifo.v", 262, 114); // bP (w, cs)
+selectCodeEditor("fifo.v", 266, 112); // bP (w, cs)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,584 MB. GUI used memory: 175 MB. Current time: 8/25/22, 1:58:22 PM EDT
+// Elapsed time: 100 seconds
+selectCodeEditor("fifo.v", 252, 371); // bP (w, cs)
+selectCodeEditor("fifo.v", 252, 371, false, false, false, false, true); // bP (w, cs) - Double Click
+// Elapsed time: 31 seconds
+selectCodeEditor("fifo.v", 363, 283); // bP (w, cs)
+selectCodeEditor("fifo.v", 363, 283, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("fifo.v", 53, 47); // bP (w, cs)
+selectCodeEditor("fifo.v", 53, 47, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "fifo.v", 'c'); // bP (w, cs)
+selectCodeEditor("fifo.v", 359, 284); // bP (w, cs)
+selectCodeEditor("fifo.v", 359, 285, false, false, false, false, true); // bP (w, cs) - Double Click
+typeControlKey((HResource) null, "fifo.v", 'v'); // bP (w, cs)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Package IP - neural_network_top", 1); // m (l, cs)
+selectButton(PAResourceQtoS.ReviewContentPanel_RE_PACKAGE_IP, "Re-Package IP"); // a (c, cs)
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: set_property core_revision 6 [ipx::current_core] 
+// Tcl Message: ipx::create_xgui_files [ipx::current_core] 
+// Tcl Message: ipx::update_checksums [ipx::current_core] 
+// Tcl Message: ipx::save_core [ipx::current_core] 
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// Tcl Message: update_ip_catalog -rebuild -repo_path c:/StageÉté2022/CharlesTousignant_MLP/Pynq/axiNeuralNet/hdl 
+// Tcl Message: INFO: [IP_Flow 19-725] Reloaded user IP repository 'c:/StageÉté2022/CharlesTousignant_MLP/Pynq/axiNeuralNet/hdl' 
+selectButton("OptionPane.button", "OK"); // JButton (v, B)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
